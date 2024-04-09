@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine.js Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/alpine.js" defer></script>
+</head>
+<body>
+    <div x-data="{ activeTab: 'education' }">
+        <!-- Tombol Education -->
+        <button 
+            x-on:click="activeTab = 'education'" 
+            :class="{ 'bg-blue-500 text-white': activeTab === 'education', 'bg-gray-200': activeTab !== 'education' }"
+        >
+            Education
+        </button>
+    
+        <!-- Tombol Service -->
+        <button 
+            x-on:click="activeTab = 'service'" 
+            :class="{ 'bg-blue-500 text-white': activeTab === 'service', 'bg-gray-200': activeTab !== 'service' }"
+        >
+            Service
+        </button>
+    
+        <!-- Tombol Contact -->
+        <button 
+            x-on:click="activeTab = 'contact'" 
+            :class="{ 'bg-blue-500 text-white': activeTab === 'contact', 'bg-gray-200': activeTab !== 'contact' }"
+        >
+            Contact
+        </button>
+    
+        <!-- Konten -->
+        <div x-show="activeTab === 'education'">
+            Konten Education
+        </div>
+        <div x-show="activeTab === 'service'">
+            Konten Service
+        </div>
+        <div x-show="activeTab === 'contact'">
+            Konten Contact
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.x"></script>
+    
+</body>
+</html>
